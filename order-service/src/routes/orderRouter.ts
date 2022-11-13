@@ -3,6 +3,6 @@ import OrderController from '../controllers/OrderController'
 
 const router = Router()
 
-router.get('/', OrderController.placeOrder)
+router.post('/', OrderController.placeOrder)
 
 export default router
