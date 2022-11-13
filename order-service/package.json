@@ -30,6 +30,7 @@
   "scripts": {
     "dev": "tsnd .",
     "build": "tsc",
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",
+    "lint": "eslint --fix \"**/*.ts\""
   }
 }

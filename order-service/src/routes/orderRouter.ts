@@ -1,8 +1,8 @@
-import { Router } from 'express'
-import OrderController from '../controllers/OrderController'
+import { Router } from "express";
+import OrderController from "../controllers/OrderController";
 
-const router = Router()
+const router = Router();
 
-router.post('/', OrderController.placeOrder)
+router.post("/", OrderController.placeOrder);
 
-export default router
+export default router;
