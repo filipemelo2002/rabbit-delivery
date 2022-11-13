@@ -1,5 +1,16 @@
 import mongoose, { Schema } from "mongoose";
 
+export interface Item {
+  name: string;
+  quantity: number;
+}
+
+export interface Order {
+  items: Item[];
+  total: Number;
+  _id?: Number;
+}
+
 const ItemSchema = new Schema({
   name: {
     type: String,
@@ -42,4 +53,4 @@ OrderSchema.path("email").validate((email) => {
   return regex.test(email);
 }, "Invalid e-mail");
 
-export default mongoose.model("Order", OrderSchema);
+export default mongoose.model<Order>("Order", OrderSchema);
