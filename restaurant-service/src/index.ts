@@ -1,3 +1,8 @@
-import { logger } from "./utils";
+import { amqpConnect, subscribe } from "./services/amqpService";
+import mongoConnect from "./services/mongoService";
 
-logger.info("Server running")
+(async () => {
+  mongoConnect();
+  const connection = await amqpConnect();
+  subscribe(connection);
+})();
